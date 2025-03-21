@@ -5,9 +5,19 @@ from utils import rembg_utils
 from utils import filters_utils
 from utils import conversion_utils
 from utils import style_transfer_utils
+from flask import Flask, request, jsonify, send_file
+import os
+import uuid
 
-def main():
-    input_image = "IMGUpgrade_test.jpg"
+app = Flask(__name__)
+
+@app.route('/process', methods=['GET'])
+def process_image():
+    print("http GET successful")
+
+
+#def main():
+    #input_image = "IMGUpgrade_test.jpg"
 
     # Обрезка изображения
     #cropped_image = "test_imgs/cropped.jpg"
@@ -36,7 +46,10 @@ def main():
 
     # Нейронная стилизация:
     # Необходимо предоставить изображение контента и стиля
-    style_transfer_utils.neural_style_transfer(input_image, "style2.jpg", "test_imgs/styled2_output.jpg", num_steps=300)
+    #style_transfer_utils.neural_style_transfer(input_image, "styles/style.jpg", "test_imgs/styled2_output.jpg", num_steps=300)
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    # Запуск сервера на всех интерфейсах, порт можно изменить по необходимости
+    app.run(host='0.0.0.0', port=5000)
+
+    #main()
