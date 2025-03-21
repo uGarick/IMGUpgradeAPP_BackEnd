@@ -1,0 +1,7 @@
+.venv
+weights
+/test_imgs/
+.idea
+temp/*.jpg
+temp/*.png
+test.py
