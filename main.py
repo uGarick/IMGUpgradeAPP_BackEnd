@@ -21,14 +21,15 @@ def get_styles():
 
 @app.route('/process_rmbg', methods=['POST'])
 def process_rmbg():
+    if not request.data:
+        return jsonify({"error": "Файл изображения не найден в теле запроса"}), 400
 
-    if 'image' not in request.files:
-        return jsonify({"error": "Изображение не было передано"}), 400
-
-    image_file = request.files['image']
-
+        # Генерируем временное имя для входного изображения
     input_filename = os.path.join(TEMP_DIR, f'{uuid.uuid4().hex}.png')
-    image_file.save(input_filename)
+
+    # Сохраняем бинарные данные в файл
+    with open(input_filename, 'wb') as f:
+        f.write(request.data)
 
     # Генерируем имя для выходного изображения
     output_filename = os.path.join(TEMP_DIR, f'{uuid.uuid4().hex}_cropped.png')
