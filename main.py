@@ -11,9 +11,44 @@ import uuid
 
 app = Flask(__name__)
 
-@app.route('/process', methods=['GET'])
-def process_image():
+TEMP_DIR = 'temp'
+if not os.path.exists(TEMP_DIR):
+    os.makedirs(TEMP_DIR)
+
+@app.route('/get_styles', methods=['GET'])
+def get_styles():
     print("http GET successful")
+
+@app.route('/process_rmbg', methods=['POST'])
+def process_image():
+
+    if 'image' not in request.files:
+        return jsonify({"error": "Изображение не было передано"}), 400
+
+    image_file = request.files['image']
+
+    input_filename = os.path.join(TEMP_DIR, f'{uuid.uuid4().hex}.png')
+    image_file.save(input_filename)
+
+    # Генерируем имя для выходного изображения
+    output_filename = os.path.join(TEMP_DIR, f'{uuid.uuid4().hex}_cropped.png')
+
+    # Вызов функции удаления фона
+    try:
+        rembg_utils.remove_background_rembg(input_filename, output_filename)
+    except Exception as e:
+        return jsonify({"error": f"Ошибка обработки изображения: {str(e)}"}), 500
+
+    # Отправляем результат обратно клиенту
+    print("http GET successful")
+    return send_file(output_filename, mimetype='image/png')
+
+
+@app.route('/process', methods=['POST'])
+def process_image():
+    # Отправляем результат обратно клиенту
+    print("http GET successful")
+
 
 
 #def main():
@@ -51,5 +86,3 @@ def process_image():
 if __name__ == '__main__':
     # Запуск сервера на всех интерфейсах, порт можно изменить по необходимости
     app.run(host='0.0.0.0', port=5000)
-
-    #main()
