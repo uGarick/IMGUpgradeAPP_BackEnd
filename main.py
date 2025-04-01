@@ -20,7 +20,7 @@ def get_styles():
     print("http GET successful")
 
 @app.route('/process_rmbg', methods=['POST'])
-def process_image():
+def process_rmbg():
 
     if 'image' not in request.files:
         return jsonify({"error": "Изображение не было передано"}), 400
