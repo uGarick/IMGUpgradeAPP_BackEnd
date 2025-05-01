@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6b009eb-cf6c-48b7-b04d-9c85a0654d75" name="Changes" comment="Start">
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/conversion_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/filters_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/pillow_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/realesrgan_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/rembg_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/style_transfer_utils.py" afterDir="false" />
+    <list default="true" id="d6b009eb-cf6c-48b7-b04d-9c85a0654d75" name="Changes" comment="Add styling func">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/IMGUpgradeAPP_BackEnd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IMGUpgradeAPP_BackEnd.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,22 +45,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.rembg_utils.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ugaricka/PycharmProjects/IMGUpgradeAPP_BackEnd&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.main.executor": "Run",
+    "Python.rembg_utils.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/ugaricka/PycharmProjects/IMGUpgradeAPP_BackEnd/styles"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/styles" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/styles" />
+      <recent name="$PROJECT_DIR$/test_imgs" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/utils" />
     </key>
@@ -97,11 +92,89 @@
       <option name="project" value="LOCAL" />
       <updated>1741947938873</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added soe funcs and testing imgs.">
+      <option name="closed" value="true" />
+      <created>1741972129463</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741972129463</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updated requirements.txt">
+      <option name="closed" value="true" />
+      <created>1741972325273</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741972325273</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Created gitignore">
+      <option name="closed" value="true" />
+      <created>1742565946708</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742565946708</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added support for http connection">
+      <option name="closed" value="true" />
+      <created>1742573710399</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742573710399</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Testing rmbg http func">
+      <option name="closed" value="true" />
+      <created>1743519406384</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743519406384</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Testing rmbg http func">
+      <option name="closed" value="true" />
+      <created>1743520912568</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1743520912568</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Testing rmbg http func">
+      <option name="closed" value="true" />
+      <created>1743521897782</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1743521897782</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add styling func">
+      <option name="closed" value="true" />
+      <created>1746114086634</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1746114086634</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add styling func">
+      <option name="closed" value="true" />
+      <created>1746114136894</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1746114136894</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start" />
+    <MESSAGE value="Added soe funcs and testing imgs." />
+    <MESSAGE value="Updated requirements.txt" />
+    <MESSAGE value="Created gitignore" />
+    <MESSAGE value="Added support for http connection" />
+    <MESSAGE value="Testing rmbg http func" />
+    <MESSAGE value="Add styling func" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add styling func" />
   </component>
 </project>

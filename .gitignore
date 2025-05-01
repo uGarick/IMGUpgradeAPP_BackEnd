@@ -9,3 +9,5 @@ weights/*
 temp/*.jpg
 temp/*.png
 test.py
+.idea/IMGUpgradeAPP_BackEnd.iml
+.idea/workspace.xml
