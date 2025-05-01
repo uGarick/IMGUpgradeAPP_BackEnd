@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d6b009eb-cf6c-48b7-b04d-9c85a0654d75" name="Changes" comment="Add styling func">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/IMGUpgradeAPP_BackEnd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IMGUpgradeAPP_BackEnd.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746114136894</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add styling func">
+      <option name="closed" value="true" />
+      <created>1746114289001</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1746114289001</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
