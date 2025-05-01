@@ -11,6 +11,11 @@ import uuid
 
 app = Flask(__name__)
 
+STYLES = {
+    'Нуар': 'styles/DarkStyle.jpg',
+    'Разноцветное': 'styles/ColourfulStyle.jpg'
+}
+
 TEMP_DIR = 'temp'
 if not os.path.exists(TEMP_DIR):
     os.makedirs(TEMP_DIR)
@@ -45,10 +50,35 @@ def process_rmbg():
     return send_file(output_filename, mimetype='image/png')
 
 
-@app.route('/process', methods=['POST'])
-def process_image():
+@app.route('/process_styling', methods=['POST'])
+def process_styling():
+    if not request.data:
+        return jsonify({"error": "Файл изображения не найден в теле запроса"}), 400
+
+    # Генерируем временное имя для входного изображения
+    input_filename = os.path.join(TEMP_DIR, f'{uuid.uuid4().hex}.png')
+
+    # Сохраняем бинарные данные в файл
+    with open(input_filename, 'wb') as f:
+        f.write(request.data)
+
+    style = request.args.get('Style')
+    if not style:
+        return jsonify({"error": "Стиль не найден"}), 400
+    style_path = STYLES.get(style)
+
+    # Генерируем имя для выходного изображения
+    output_filename = os.path.join(TEMP_DIR, f'{uuid.uuid4().hex}_cropped.png')
+
+    # Вызов функции удаления фона
+    try:
+        style_transfer_utils.neural_style_transfer(input_filename, style_path, output_filename, num_steps=300)
+    except Exception as e:
+        return jsonify({"error": f"Ошибка обработки изображения: {str(e)}"}), 500
+
     # Отправляем результат обратно клиенту
     print("http GET successful")
+    return send_file(output_filename, mimetype='image/png')
 
 
 
